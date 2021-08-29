@@ -59,7 +59,10 @@ class Ui_Form(object):
         self.txtthirdnumber = QtWidgets.QLineEdit(Form)
         self.txtthirdnumber.setGeometry(QtCore.QRect(420, 331, 201, 41))
         self.txtthirdnumber.setObjectName("txtthirdnumber")
-
+        self.btnadd.clicked.connect(self.ADD)
+        self.btnsubtract.clicked.connect(self.SUBTRACT)
+        self.btnmultiply.clicked.connect(self.MUL)
+        self.btndivide.clicked.connect(self.DIV)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -74,6 +77,34 @@ class Ui_Form(object):
         self.btnmultiply.setText(_translate("Form", "MULTIPLY"))
         self.btndivide.setText(_translate("Form", "DIVIDE"))
         self.label_4.setText(_translate("Form", "Third Number"))
+        
+    def ADD(self):
+        firstnumber = self.txtfirstnumber.text()
+        secondnumber = self.txtsecondnumber.text()
+        thirdnumber = self.txtthirdnumber.text()
+        result = int(firstnumber) + int(secondnumber) + int(thirdnumber)
+        self.lblmessage.setText(str(result))
+    
+    def SUBTRACT(self):
+        firstnumber = self.txtfirstnumber.text()
+        secondnumber = self.txtsecondnumber.text()
+        thirdnumber = self.txtthirdnumber.text()
+        result = int(firstnumber) - int(secondnumber) - int(thirdnumber)
+        self.lblmessage.setText(str(result))
+                                
+    def MUL(self):
+        firstnumber = self.txtfirstnumber.text()
+        secondnumber = self.txtsecondnumber.text()
+        thirdnumber = self.txtthirdnumber.text()
+        result = int(firstnumber) * int(secondnumber) * int(thirdnumber)
+        self.lblmessage.setText(str(result))
+                                
+    def DIV(self):
+        firstnumber = self.txtfirstnumber.text()
+        secondnumber = self.txtsecondnumber.text()
+        thirdnumber = self.txtthirdnumber.text()
+        result = int(firstnumber) / int(secondnumber) / int(thirdnumber)
+        self.lblmessage.setText(str(result))
 
 
 if __name__ == "__main__":
